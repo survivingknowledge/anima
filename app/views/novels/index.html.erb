@@ -1,0 +1,11 @@
+<ul>
+  <% if !@novels.empty? %>
+    <% @novels.each do |novel| %>
+      <li>
+        <%= link_to novel.title, novel_path(novel) %>
+      </li>
+    <% end %>
+  <% else %>
+    <li>No Novels Available</li>
+  <% end %>
+</ul>

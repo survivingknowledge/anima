@@ -44,7 +44,7 @@ class NovelsController < ApplicationController
   private
 
   def set_novel
-    @novel = Novel.find(params[:id])
+    @novel = Novel.find_by(code: params[:slug])
   end
 
   def novel_params
