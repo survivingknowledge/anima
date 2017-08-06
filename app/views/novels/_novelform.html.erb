@@ -1,0 +1,28 @@
+<%= form_for @novel do |f| %>
+  <table class="centered novel-form">
+    <tr>
+      <td><%= f.label :title %><span>*</span></td>
+      <td><%= f.text_field :title , required: true%></td>
+    </tr>
+    <tr>
+      <td><%= f.label :author %></td>
+      <td><%= f.text_field :author %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :description %></td>
+      <td><%= f.text_area :description, class:'textarea'%></td>
+    </tr>
+    <tr>
+      <td><%= f.label :summary %></td>
+      <td><%= f.text_area :summary, class:'summary' %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :code %><span>*</span></td>
+      <td><%= f.text_field :code, placeholder: 'TDG, ISSTH, etc...', required:true %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit style: 'float:right;' %></td>
+    </tr>
+  </table>
+<% end %>

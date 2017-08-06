@@ -44,7 +44,7 @@ class NovelsController < ApplicationController
   private
 
   def set_novel
-    @novel = Novel.find_by(code: params[:slug])
+    @novel = Novel.find_by(code: params[:slug].upcase)
   end
 
   def novel_params
