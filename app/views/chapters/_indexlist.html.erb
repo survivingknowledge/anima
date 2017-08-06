@@ -1,0 +1,7 @@
+<ul>
+  <% chapters.each do |chapter| %>
+    <li>
+      <%= link_to "Chapter #{chapter.chapter_number} - #{chapter.title}", novel_chapter_path(novel.code, chapter.chapter_number) %>
+    </li>
+  <% end %>
+</ul>

@@ -1,3 +1,6 @@
 <h4>novel show page</h4>
 <%= @novel.title %>
+<div class="">
+  <%= render partial: "chapters/indexlist", locals: {chapters: @novel.find_public_chapters, novel: @novel} %>
+</div>
 <%= link_to 'novels', novels_path, class:'backlink' %>
