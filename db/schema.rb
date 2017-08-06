@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170806165523) do
+ActiveRecord::Schema.define(version: 20170806185533) do
+
+  create_table "chapters", force: :cascade do |t|
+    t.integer "novel_id"
+    t.string "title"
+    t.string "content"
+    t.string "language", default: "en"
+    t.integer "chapter_number"
+    t.string "status", default: "unpublished"
+    t.datetime "publish_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "novels", force: :cascade do |t|
     t.string "title"
