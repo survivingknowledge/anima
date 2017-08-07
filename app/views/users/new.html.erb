@@ -1,0 +1,17 @@
+<h4>signup/register</h4>
+<table class="centered novel-form">
+  <%= form_tag('/sign-up') do %>
+    <tr>
+      <td><%= label_tag 'Email' %></td>
+      <td><%= text_field_tag 'email' %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag 'Password' %></td>
+      <td><%= password_field_tag 'password' %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= submit_tag 'Sign Up' %></td>
+    </tr>
+  <% end %>
+</table>

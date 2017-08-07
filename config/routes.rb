@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#home'
+
+  get '/login', to: 'sessions#new', as: 'new_session'
+  post '/login', to: 'sessions#create'
+  get '/sign-up', to: 'users#new', as: 'new_user'
+  post '/sign-up', to: 'users#create'
+
   #goal here is /r/<novel code>/<chapter number>
   resources :novels, param: :slug, path: 'r' do
     #has to be above /:chapter to work correctly
