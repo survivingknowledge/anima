@@ -1,1 +1,6 @@
-<h4>chapter show page</h4>
+<div class="chapter-title">
+  Chapter <%= @chapter.chapter_number %>
+</div>
+<div class="chapter-content">
+  <%= @chapter.content.html_safe %>
+</div>

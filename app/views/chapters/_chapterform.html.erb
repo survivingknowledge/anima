@@ -1,4 +1,4 @@
-<%= form_for @chapter, url: novel_chapter_path(@novel.code, @chapter.chapter_number) do |f| %>
+<%= form_for @chapter, url: novel_path(@novel.code) do |f| %>
 <table class="centered novel-form">
   <tr>
     <td>Novel</td>
