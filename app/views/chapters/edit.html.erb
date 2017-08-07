@@ -1,0 +1,29 @@
+<h4>edit chapters page</h4>
+<%= form_for @chapter, url: novel_chapter_path(@novel.code, @chapter.chapter_number) do |f| %>
+<table class="centered novel-form">
+  <tr>
+    <td>Novel</td>
+    <td><%= f.hidden_field :novel_id, value: @novel.id %><%= @novel.title %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :title %></td>
+    <td><%= f.text_field :title %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :chapter_number %><span>*</span></td>
+    <td><%= f.text_field :chapter_number, required: true %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :status %></td>
+    <td><%= f.text_field :status %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :content %><span>*</span></td>
+    <td><%= f.text_area :content, class:'textarea', required: true %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><%= f.submit style: 'float:right;' %></td>
+  </tr>
+</table>
+<% end %>

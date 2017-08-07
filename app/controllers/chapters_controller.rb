@@ -1,7 +1,7 @@
 class ChaptersController < ApplicationController
 
   before_action :set_novel
-  before_action :set_chapter, only: [:edit, :update, :destroy]
+  #before_action :set_chapter, only: [:edit, :update, :destroy]
 
   def index
     @chapters = @novel.find_public_chapters
@@ -9,7 +9,36 @@ class ChaptersController < ApplicationController
 
   #we only want to show a published chapter to viewers
   def show
-    @chapter = @novel.find_public_chapter(params[:chapter])
+    @chapter = @novel.find_public_chapter(params[:chapters])
+    if !@chapter
+      redirect_to novel_path(@novel.code)
+    end
+  end
+
+  def new
+    @chapter = @novel.chapters.build
+  end
+
+  def create
+    @chapter = Chapter.new(chapter_params)
+    if @chapter.save
+      redirect_to novel_chapter_path(@novel.code, @chapter.chapter_number)
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @chapter = @novel.find_public_chapter(params[:chapters])
+  end
+
+  def update
+    @chapter = @novel.find_public_chapter(params[:chapters])
+    if @chapter.update(chapter_params)
+      redirect_to novel_chapter_path(@novel.code, @chapter.chapter_number)
+    else
+      render :edit
+    end
   end
 
 
@@ -20,7 +49,7 @@ class ChaptersController < ApplicationController
   end
 
   def set_chapter
-    @chapter = @novel.chapters.where(chapter_number: params[:chapter]) if @novel
+    @chapter = @novel.chapters.where(chapter_number: params[:chapters]) if @novel
   end
 
   def chapter_params
@@ -30,7 +59,8 @@ class ChaptersController < ApplicationController
       :chapter_number,
       :status,
       :language,
-      :publish_date
+      :publish_date,
+      :novel_id
     )
   end
 end
