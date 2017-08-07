@@ -5,4 +5,8 @@ class Chapter < ApplicationRecord
     chapter_number
   end
 
+  def self.latest_chapters
+    self.where("publish_date <= ?", Date.today).where(status: "published", language: "en").order(:publish_date => :desc).limit(10)
+  end
+
 end
