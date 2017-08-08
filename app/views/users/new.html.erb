@@ -3,11 +3,11 @@
   <%= form_tag('/sign-up') do %>
     <tr>
       <td><%= label_tag 'Email' %></td>
-      <td><%= text_field_tag 'email' %></td>
+      <td><%= text_field_tag 'user[email]' %></td>
     </tr>
     <tr>
       <td><%= label_tag 'Password' %></td>
-      <td><%= password_field_tag 'password' %></td>
+      <td><%= password_field_tag 'user[password]' %></td>
     </tr>
     <tr>
       <td></td>
