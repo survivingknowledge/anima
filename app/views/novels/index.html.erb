@@ -1,5 +1,5 @@
 <ul>
-  <% if !@novels.empty? %>
+  <% if !@novels.blank? %>
     <% @novels.each do |novel| %>
       <li>
         <%= link_to novel.title, novel_path(novel) %>
