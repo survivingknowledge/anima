@@ -1,2 +1,2 @@
 <h4>Homepage</h4>
-<h3>welcome, <%= @user.email %></h3>
+<h3>welcome <%= @user.try(:email) || "Guest" %></h3>
