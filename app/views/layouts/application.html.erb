@@ -8,6 +8,53 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <%= yield %>
+      <header>
+        <div class="root">
+          <div class="row">
+            <nav>
+              <div class="logo">
+                <a href="/">Home</a>
+              </div>
+              <div class="search-parent">
+                <div class="search">
+                  <form class="" action="/" method="post">
+                    <input type="text" name="query" placeholder="Search...">
+                    <button type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+              <div class="links">
+                <ul>
+                  <li><a href="#">Latest Releases</a></li>
+                  <li><a href="#">Popular</a></li>
+                  <li><a href="#">Novels</a></li>
+                  <li><a href="#">Completed</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <div class="root">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
+
+    <footer>
+      <div class="root">
+        <div class="row">
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="row">
+          <h4>ANIMA &copy; 2017 All rights reserved.</h4>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
