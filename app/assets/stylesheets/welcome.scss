@@ -3,12 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .hero{
-  display: none;
+  position: relative;
+  height: 200px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.hero p{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-container{
   position: absolute;
   left: 0;
   right: 0;
-  height: 400px;
   background: darkgreen;
+  min-height: 200px;
 }
 
 @media (min-width: 768px) {
