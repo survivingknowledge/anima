@@ -23,7 +23,7 @@ a, a:visited{
 }
 
 $container-padding: 15px;
-$container-width: auto;
+$container-width: 100%;
 // page wrapper/container
 .root{
   width: $container-width;
@@ -46,7 +46,6 @@ $container-width: auto;
 }
 
 .row{
-  position: relative;
   //remove space from container padding
   margin-left: -$container-padding;
   margin-right: -$container-padding;
@@ -57,6 +56,10 @@ $container-width: auto;
     display: table;
     clear: both;
   }
+}
+
+.content{
+  min-height: 100vh;
 }
 
 .text-center{

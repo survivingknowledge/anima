@@ -14,7 +14,7 @@ header{
 
  nav{
    position: relative;
-
+   color: #fff;
    ul{
 
      li{
@@ -47,8 +47,10 @@ header{
     display: block;
     width: 110px;
     height: 54px;
-    background: #fff;
+    background: #fff url('gravitytales.jpg') no-repeat 5px 5px;
+    background-size: contain;
     text-indent: -9999px;
+    border-radius: 4px;
   }
 }
 
