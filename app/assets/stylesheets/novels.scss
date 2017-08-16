@@ -66,13 +66,52 @@ $form-width: 350px;
   float: left;
   position: relative;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   margin-right: 10px;
   width: 175px;
   height: 250px;
-  background: #555;
+  background: #1b1b1b url('no-image.png') center center no-repeat;
+  background-blend-mode: overlay;
   color: #fff;
   text-align: center;
+}
+
+.publish-date{
+  position: absolute;
+  bottom: 5px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  color: #fff;
+  font-size: .75rem;
+  font-weight: lighter;
+}
+
+.novel-overlay{
+  position: absolute;
+  top: 65%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: .55;
+}
+
+.chapter-number{
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+  font-size: .875rem;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.novel-title{
+  position: absolute;
+  top: 65%;
+  left: 0;
+  right: 0;
 }
 
 .novelbox a{

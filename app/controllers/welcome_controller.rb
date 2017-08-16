@@ -11,10 +11,11 @@ class WelcomeController < ApplicationController
       AND (c.status = 'published')
       AND (c.language = 'en')
       ORDER BY c.publish_date DESC
-      LIMIT 10
+      LIMIT 6
     SQL
 
     @chapters = ActiveRecord::Base.connection.execute(query)
-  
+    @novels = Novel.limit(12)
+
   end
 end

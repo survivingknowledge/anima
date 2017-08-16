@@ -7,19 +7,31 @@
       </p>
     </div>
   </div>
+  <div class="row">Latest Chapters <hr class="style14"></div>
   <div class="row">
     <div class="novel-holder">
       <% if !@chapters.blank? %>
         <% @chapters.each do |chapter| %>
-          <div class="novelbox">
-            <div class="novel"><%= chapter["novel_code"]%></div>
+          <div class="novelbox" style="background: url(<%= asset_path 'novels/tdg_cover.jpg' %>); width: 175px; height: 250px;">
+            <div class="novel-overlay"></div>
             <div class="chapter-number">Chapter <%= chapter["chapter_number"] %></div>
             <div class="publish-date"><%= distance_of_time_in_words(chapter["publish_date"], Time.now) %> ago</div>
             <!-- <a href="<%= "/r/#{chapter["novel_code"]}/#{chapter["chapter_number"]}" %>"><%= chapter["chapter_number"] %></a> -->
             <a href="<%= novel_chapter_path(novel_slug: chapter["novel_code"], chapters: chapter["chapter_number"]) %>"><%= chapter["chapter_number"] %></a>
+            <div class="novel-title"><%= chapter["novel_title"]%></div>
           </div>
+
         <% end %>
       <% end %>
     </div>
+  </div>
+  <div class="row">Some of the Novels <hr class="style14"></div>
+  <div class="row">
+    <% @novels.each do |novel| %>
+      <div class="novelbox">
+        <div class="novel-overlay"></div>
+        <div class="novel-title"><%= novel.title %></div>
+      </div>
+    <% end %>
   </div>
 </div>
