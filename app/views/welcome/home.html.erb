@@ -28,7 +28,7 @@
   <div class="row">Some of the Novels <hr class="style14"></div>
   <div class="row">
     <% @novels.each do |novel| %>
-      <div class="novelbox">
+      <div class="novelbox" style="<% if !novel.cover.nil? %>background: url(<%= asset_path "#{novel.cover}" %>); width: 175px; height: 250px;<% end %>">
         <div class="novel-overlay"></div>
         <div class="novel-title"><%= novel.title %></div>
       </div>
