@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
   def home
     # @chapters = Novel.joins(:chapters).select('novels.title AS novel_title', 'chapters.*')
     query = <<-SQL
-      SELECT c.title, c.chapter_number, c.publish_date, c.status, c.language, n.code AS novel_code, n.title AS novel_title
+      SELECT c.title, c.chapter_number, c.publish_date, c.status, c.language, n.code AS novel_code, n.title AS novel_title, n.cover AS novel_cover
       FROM chapters AS c
       LEFT JOIN novels as n
       ON c.novel_id = n.id

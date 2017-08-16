@@ -12,7 +12,7 @@
     <div class="novel-holder">
       <% if !@chapters.blank? %>
         <% @chapters.each do |chapter| %>
-          <div class="novelbox" style="background: url(<%= asset_path 'novels/tdg_cover.jpg' %>); width: 175px; height: 250px;">
+          <div class="novelbox" style="<% if !chapter["novel_cover"].nil? %>background: url(<%= asset_path "#{chapter["novel_cover"]}" %>); width: 175px; height: 250px;<% end %>">
             <div class="novel-overlay"></div>
             <div class="chapter-number">Chapter <%= chapter["chapter_number"] %></div>
             <div class="publish-date"><%= distance_of_time_in_words(chapter["publish_date"], Time.now) %> ago</div>
