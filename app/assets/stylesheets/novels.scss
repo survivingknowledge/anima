@@ -57,3 +57,17 @@ $form-width: 350px;
     text-decoration: underline;
   }
 }
+
+.novelbox{
+  position: relative;
+}
+
+.novelbox a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 175px;
+  height: 250px;
+  text-indent: -9999px;
+}
