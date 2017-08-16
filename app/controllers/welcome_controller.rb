@@ -15,6 +15,6 @@ class WelcomeController < ApplicationController
     SQL
 
     @chapters = ActiveRecord::Base.connection.execute(query)
-
+  
   end
 end

@@ -58,8 +58,21 @@ $form-width: 350px;
   }
 }
 
+.novel-holder{
+  height: 250px;
+}
+
 .novelbox{
+  float: left;
   position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 175px;
+  height: 250px;
+  background: #555;
+  color: #fff;
+  text-align: center;
 }
 
 .novelbox a{
@@ -70,4 +83,5 @@ $form-width: 350px;
   width: 175px;
   height: 250px;
   text-indent: -9999px;
+
 }
