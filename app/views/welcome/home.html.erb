@@ -9,16 +9,15 @@
   </div>
   <div class="row">
     <div class="novel-holder">
-      <div class="novelbox">test</div>
-      <div class="novelbox">test</div>
-      <div class="novelbox">test</div>
-      <div class="novelbox">test</div>
-      <div class="novelbox">test</div>
-      <div class="novelbox">test</div>
-      <div class="novelbox">test</div>
-      <div class="novelbox">test</div>
-      <div class="novelbox">test</div>
-      <div class="novelbox">test</div>
+      <% if !@chapters.blank? %>
+        <% @chapters.each do |chapter| %>
+          <div class="novelbox">
+            <div class="novel"><%= chapter["novel_code"]%></div>
+            <div class="novel-title"><%= chapter["title"] %></div>
+            <div class="chapter-number"><%= chapter["chapter_number"] %></div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
