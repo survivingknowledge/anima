@@ -15,7 +15,6 @@
               <div class="logo">
                 <a href="/">Home</a>
               </div>
-
               <div class="links">
                 <ul>
                   <li><a href="#">Latest Releases</a></li>
@@ -25,7 +24,6 @@
                   <li><%= @user.try(:email) || "Sign In" %> <img src="" width="12" height="12" alt=""></li>
                 </ul>
               </div>
-
               <div class="search-parent">
                 <div class="search">
                   <form class="" action="/" method="post">
@@ -38,13 +36,11 @@
           </div>
         </div>
       </header>
-
       <div class="root">
         <div class="row content">
           <%= yield %>
         </div>
       </div>
-
     <footer>
       <div class="root">
         <div class="row">
