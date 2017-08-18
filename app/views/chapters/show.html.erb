@@ -1,4 +1,6 @@
 <div class="chapter-title">
+  <% @novel = Novel.find_by_id(@chapter.novel_id) %>
+  <%= link_to @novel.title, novel_path(@novel.code) %><span>>></span> 
   Chapter <%= @chapter.chapter_number %>
 </div>
 <div class="chapter-content">
