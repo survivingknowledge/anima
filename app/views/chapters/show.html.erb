@@ -1,7 +1,15 @@
 <div class="chapter-title">
   <% @novel = Novel.find_by_id(@chapter.novel_id) %>
-  <%= link_to @novel.title, novel_path(@novel.code) %><span>>></span> 
+  <%= link_to @novel.title, novel_path(@novel.code) %><span>>></span>
   Chapter <%= @chapter.chapter_number %>
+</div>
+<div class="chapter-nav">
+  <% if @chapter.chapter_number > 1 %>
+    <div class="prev-chapter"><%= link_to '<< Prev Chapter', novel_chapter_path(@novel.code, (@chapter.chapter_number - 1)) %></div>
+  <% end %>
+  <% if @chapter.chapter_number + 1 <= @novel.find_public_chapters.size %>
+    <div class="next-chapter"><%= link_to 'Next Chapter >>', novel_chapter_path(@novel.code, (@chapter.chapter_number + 1)) %></div>
+  <% end %>
 </div>
 <div class="chapter-content">
   <%= @chapter.content.html_safe %>

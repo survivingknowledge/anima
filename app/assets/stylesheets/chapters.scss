@@ -24,3 +24,20 @@
   margin-left: 10px;
   margin-right: 5px;
 }
+
+.chapter-nav{
+  margin: 10px 0;
+  
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.prev-chapter{
+  float:left;
+}
+.next-chapter{
+  float:right;
+}
