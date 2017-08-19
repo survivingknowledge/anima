@@ -31,6 +31,7 @@
       <div class="novelbox" style="<% if !novel.cover.nil? %>background: url(<%= asset_path "#{novel.cover}" %>); width: 175px; height: 250px;<% end %>">
         <div class="novel-overlay"></div>
         <div class="novel-title"><%= novel.title %></div>
+        <a href="<%= novel_path(novel.code) %>"><%= novel.title %></a>
       </div>
     <% end %>
   </div>
