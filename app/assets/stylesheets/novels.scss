@@ -60,6 +60,7 @@ $form-width: 350px;
 
 .novel-holder{
   height: 250px;
+
 }
 
 .novelbox{
@@ -74,6 +75,7 @@ $form-width: 350px;
   background-blend-mode: overlay;
   color: #fff;
   text-align: center;
+  border-radius: 10px;
 }
 
 .publish-date{
@@ -95,6 +97,8 @@ $form-width: 350px;
   right: 0;
   background: #000;
   opacity: .55;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .chapter-number{
